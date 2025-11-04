@@ -51,7 +51,6 @@ public class MagPipe2
         final int NUMBER_OF_RESPONSES = 6;
         int whichResponse = (int)(Math.random() * 6 + 0);       // revise this assignment statement      
         String response = "";
-
         if (whichResponse == 0)
         {
             response = "Interesting.";
@@ -101,8 +100,19 @@ public class MagPipe2
      */
     public String getResponse(String statement)
     {
-        String response = "";        
-        response = getRandomResponse();       
+        String response = "";    
+        if (statement.indexOf("hello") >= 0)
+        {
+            response = "Oh my goodness, HI";
+        }
+        else if (statement.indexOf("weather") >= 0)
+        {
+            response = "Touch grass :)";
+        }
+        else
+        {       
+        response = getRandomResponse();    
+        }   
         return response;
     }
 }
